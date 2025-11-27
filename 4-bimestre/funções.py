@@ -51,5 +51,20 @@ def doces():
     return print(doce_de_verdade)
 
 doces()
-print(Doces)                     #Não é possível acessar uma variável criada dentro de uma função fora dela
+#print(Doces)                     #Não é possível acessar uma variável criada dentro de uma função fora dela
 print(doce_de_verdade)
+
+
+
+#---------------------------------------------------------------------------- SOMAR + DE 2 TERMOS ---------------------------------------------------------------------------#
+
+def somar(*numeros):
+    """
+    soma termos
+    """
+    total = 0
+    for n in numeros:
+        total += n
+    print("Soma: ", total)
+
+somar(1, 2, 3)
