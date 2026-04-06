@@ -38,4 +38,13 @@ def main():
     conta.verificar_situacao()
     print(f"O saldo atual da conta número {conta.getNumero()} é: {conta.getSaldo()}")
 
+    novo_saldo = float(input("Digite o novo saldo da conta: "))
+    conta.setSaldo(novo_saldo)
+    conta.verificar_situacao()
+    print(f"O novo saldo da conta número {conta.getNumero()} é: {conta.getSaldo()}")
+
+    novo_tipo_conta = input("Digite o novo tipo da conta: ")
+    conta.setTipoConta(novo_tipo_conta)
+    print(f"O novo tipo da conta número {conta.getNumero()} é: {conta.getTipoConta()}")
+
 main()
