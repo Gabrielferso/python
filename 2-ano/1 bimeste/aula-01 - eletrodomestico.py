@@ -19,7 +19,7 @@ class Eletrodomestico :
         self.consumo = input("Digite o novo consumo: ")
         return f"Consumo atualizado para: {self.consumo}"
     
-    def getVoltagem(self):
+    def getConsumo(self):
         return f"O consumo atual é: {self.consumo}"
     
     def isLigado(self):
@@ -46,3 +46,41 @@ tv1.setligado(None)
 tv1.setVoltagem()
 tv1.setConsumo()
 print(tv1.descrever())
+
+
+class tv (Eletrodomestico):
+    def __init__(self, ligado, voltagem, consumo, tamanho, volume):
+        super().__init__(ligado, voltagem, consumo)
+        self._tamanho = tamanho
+        self._volume = volume
+
+    @property
+    def volume(self):
+        return self._volume
+    
+    @property
+    def tamanho(self):
+        return self._tamanho
+    
+    @volume.setter
+    def volume(self, volume):
+        volume = int(input("Digite o novo volume da TV: "))
+        self._volume = volume
+        
+    @tamanho.setter
+    def tamanho(self, tamanho):
+        tamanho = int(input("Digite o novo tamanho da TV: "))
+        self._tamanho = tamanho
+        
+tv3 = tv(True, 220, 100, 50, 16)
+
+print(tv3.isLigado())
+tv3.setligado(None)
+print(tv3.isLigado())
+tv3.setVoltagem()
+tv3.setConsumo()
+print(tv3.descrever())
+tv3.volume = None
+print(f"O volume da TV é: {tv3.volume}")
+tv3.tamanho = None
+print(f"O tamanho da TV é: {tv3.tamanho}")
